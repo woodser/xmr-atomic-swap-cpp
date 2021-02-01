@@ -16,5 +16,5 @@ int main(int argc, const char* argv[]) {
   }
 
   // demonstrate atomic swap utils
-  xmr_atomic_swap_utils::example_util();
+  xmr_atomic_swap_utils::say_hello();
 }

@@ -8,8 +8,18 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++11 -F/Library/Frameworks -
 
 project(XmrAtomicSwapCpp)
 
+#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+
 set(BUILD_LIBRARY ON)
 set(BUILD_SCRATCHPAD ON)
+
+####################
+# Rust
+####################
+
+enable_language(Rust)
+include(CMakeCargo)
+
 
 ####################
 # Extra libraries
@@ -33,37 +43,25 @@ endif()
 
 message(STATUS EXTRA_LIBRARIES: ${EXTRA_LIBRARIES})
 
-############
-# Epee
-############
-
-
-############
-# Boost
-############
-
-set(Boost_NO_BOOST_CMAKE 1)
-set(Boost_USE_MULTITHREADED ON)
-find_package(Boost 1.58 QUIET REQUIRED COMPONENTS chrono date_time filesystem program_options regex serialization wserialization system thread)
-message(STATUS "Using Boost include dir at ${Boost_INCLUDE_DIR}")
-include_directories(${Boost_INCLUDE_DIR})
-
 ########################
 # Build C++ library
 ########################
 
 include_directories(src/main)
 
-set(
-    LIBRARY_SRC_FILES
-    src/main/xmr_atomic_swap_utils.cpp
-)
-
 if (BUILD_LIBRARY)
+    add_subdirectory(external/test-lib-rust)
+
+    set(
+        LIBRARY_SRC_FILES
+        src/main/xmr_atomic_swap_utils.cpp
+    )
+    
     add_library(xmr_atomic_swap_utils SHARED ${LIBRARY_SRC_FILES})
     
     target_link_libraries(xmr_atomic_swap_utils
         ${EXTRA_LIBRARIES}
+        test-lib-rust
     )
 endif()
 
@@ -72,11 +70,13 @@ endif()
 ########################
 
 if (BUILD_SCRATCHPAD)
+    
     set(SCRATCHPAD_SRC_FILES src/test/scratchpad.cpp)
     
     add_executable(scratchpad ${LIBRARY_SRC_FILES} ${SCRATCHPAD_SRC_FILES})
     
     target_link_libraries(scratchpad
         ${EXTRA_LIBRARIES}
+        test-lib-rust
     )
 endif()

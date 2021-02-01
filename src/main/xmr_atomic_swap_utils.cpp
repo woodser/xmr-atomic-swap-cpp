@@ -15,7 +15,13 @@
 #include <stdio.h>
 #include <iostream>
 #include "xmr_atomic_swap_utils.h"
+#include "test_lib_rust.h"
 
-void xmr_atomic_swap_utils::example_util() {
-  std::cout << "EXAMPLE UTIL CALLED!" << std::endl;
+void xmr_atomic_swap_utils::say_hello() {
+  std::cout << "HELLO WORLD!" << std::endl;
+
+  // invoke rust functions
+  greetings();
+  int sum = add(3, 5);
+  std::cout << "SUM FROM RUST: " << sum << std::endl;
 }
