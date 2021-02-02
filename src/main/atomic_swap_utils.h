@@ -28,7 +28,7 @@
 /**
  * Collection of utilities for atomic swaps with Monero.
  */
-namespace xmr_atomic_swap_utils
+namespace atomic_swap_utils
 {
   void say_hello();
 }

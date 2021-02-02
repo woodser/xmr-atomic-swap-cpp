@@ -14,10 +14,10 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "xmr_atomic_swap_utils.h"
-#include "test_lib_rust.h"
+#include "atomic_swap_utils.h"
+#include "atomic_swap_rust_bridge.h"
 
-void xmr_atomic_swap_utils::say_hello() {
+void atomic_swap_utils::say_hello() {
   std::cout << "HELLO WORLD!" << std::endl;
 
   // invoke rust functions

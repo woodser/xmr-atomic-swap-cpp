@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <iostream>
-#include "xmr_atomic_swap_utils.h"
+#include "atomic_swap_utils.h"
 
 using namespace std;
 
@@ -16,5 +16,5 @@ int main(int argc, const char* argv[]) {
   }
 
   // demonstrate atomic swap utils
-  xmr_atomic_swap_utils::say_hello();
+  atomic_swap_utils::say_hello();
 }

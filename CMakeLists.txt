@@ -54,12 +54,12 @@ if (BUILD_LIBRARY)
 
     set(
         LIBRARY_SRC_FILES
-        src/main/xmr_atomic_swap_utils.cpp
+        src/main/atomic_swap_utils.cpp
     )
     
-    add_library(xmr_atomic_swap_utils SHARED ${LIBRARY_SRC_FILES})
+    add_library(atomic_swap_utils SHARED ${LIBRARY_SRC_FILES})
     
-    target_link_libraries(xmr_atomic_swap_utils
+    target_link_libraries(atomic_swap_utils
         ${EXTRA_LIBRARIES}
         test-lib-rust
     )
