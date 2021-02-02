@@ -7,6 +7,7 @@ A collection of C++ utilities to execute atomic swaps with Monero.
 * [COMIT](https://github.com/comit-network) (written in Rust)
 
 # Compiling from source
-* Install Rust for your system<br>
+1. Install Rust for your system<br>
   Mac: `brew install rustup && rustup-init`s
-* Configure current shell: `source $HOME/.cargo/env`
+2. Configure current shell: `source $HOME/.cargo/env`
+3. `./bin/build_xmr_atomic_swap_cpp`

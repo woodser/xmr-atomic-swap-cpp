@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# build libmonero-cpp shared library
+# build shared library
 mkdir -p build && 
 cd build && 
 cmake .. && 
