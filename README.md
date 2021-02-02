@@ -8,6 +8,8 @@ A collection of C++ utilities to execute atomic swaps with Monero.
 
 # Compiling from source
 1. Install Rust for your system<br>
-  Mac: `brew install rustup && rustup-init`s
-2. Configure current shell: `source $HOME/.cargo/env`
-3. `./bin/build_xmr_atomic_swap_cpp`
+  Mac: `brew install rustup && rustup-init`
+2. `rustup install nightly`
+3. `rustup override set nightly`
+4. `source $HOME/.cargo/env` to configure current shell
+5. `./bin/build_xmr_atomic_swap_cpp`
