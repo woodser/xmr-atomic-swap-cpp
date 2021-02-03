@@ -1,5 +1,5 @@
 [package]
-name = "test-lib-rust"
+name = "rust_bridge"
 version = "0.1.0"
 authors = ["woodser <woodser@protonmail.com>"]
 edition = "2018"

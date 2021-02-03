@@ -48,10 +48,10 @@ message(STATUS EXTRA_LIBRARIES: ${EXTRA_LIBRARIES})
 ########################
 
 include_directories(src/main)
+add_subdirectory(rust_bridge)
 
 if (BUILD_LIBRARY)
-    add_subdirectory(external/test-lib-rust)
-
+    
     set(
         LIBRARY_SRC_FILES
         src/main/atomic_swap_utils.cpp
@@ -61,7 +61,7 @@ if (BUILD_LIBRARY)
     
     target_link_libraries(atomic_swap_utils
         ${EXTRA_LIBRARIES}
-        test-lib-rust
+        rust_bridge
     )
 endif()
 
@@ -77,6 +77,6 @@ if (BUILD_SCRATCHPAD)
     
     target_link_libraries(scratchpad
         ${EXTRA_LIBRARIES}
-        test-lib-rust
+        rust_bridge
     )
 endif()

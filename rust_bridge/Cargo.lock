@@ -239,6 +239,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust_bridge"
+version = "0.1.0"
+dependencies = [
+ "cross-curve-dleq",
+ "rand",
+]
+
+[[package]]
 name = "secp256k1"
 version = "0.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -305,14 +313,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-xid",
-]
-
-[[package]]
-name = "test-lib-rust"
-version = "0.1.0"
-dependencies = [
- "cross-curve-dleq",
- "rand",
 ]
 
 [[package]]
