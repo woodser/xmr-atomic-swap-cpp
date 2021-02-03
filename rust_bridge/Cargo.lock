@@ -2875,6 +2875,7 @@ version = "0.1.0"
 dependencies = [
  "cross-curve-dleq",
  "rand 0.7.3",
+ "serde_json",
  "swap",
 ]
 
