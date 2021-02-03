@@ -8,6 +8,7 @@ edition = "2018"
 
 [lib]
 crate-type = ["staticlib"]
+path = "src/atomic_swap_rust_bridge.rs"
 
 [dependencies]
 rand = "0.7"
