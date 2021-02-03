@@ -11,8 +11,8 @@ pub extern "C" fn greetings()
   println!("Keys generated");
   
   // print keys
-  let a_str = serde_json::to_string(&a).expect("failed to serialize bitcoin secret key a");
-  println!("Bitcoin private key a: {:?}", a_str);
+  //let a_str = serde_json::to_string(&a).expect("failed to serialize bitcoin secret key a");
+  println!("Bitcoin private key a: {:?}", a);
 }
 
 #[no_mangle]
