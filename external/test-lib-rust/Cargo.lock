@@ -42,7 +42,7 @@ checksum = "8aebca1129a03dc6dc2b127edd729435bbc4a37e1d5f4d7513165089ceb02634"
 [[package]]
 name = "cross-curve-dleq"
 version = "0.1.0"
-source = "git+https://github.com/comit-network/cross-curve-dleq?rev=eddcdea1d1f16fa33ef581d1744014ece535c920#eddcdea1d1f16fa33ef581d1744014ece535c920"
+source = "git+https://github.com/woodser/cross-curve-dleq?rev=eddcdea1d1f16fa33ef581d1744014ece535c920#eddcdea1d1f16fa33ef581d1744014ece535c920"
 dependencies = [
  "bit-vec",
  "curve25519-dalek",

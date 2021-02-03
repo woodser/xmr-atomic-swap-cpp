@@ -11,4 +11,4 @@ crate-type = ["staticlib"]
 
 [dependencies]
 rand = "0.7"
-cross-curve-dleq = { git = "https://github.com/comit-network/cross-curve-dleq", rev = "eddcdea1d1f16fa33ef581d1744014ece535c920"}
+cross-curve-dleq = { git = "https://github.com/woodser/cross-curve-dleq", rev = "eddcdea1d1f16fa33ef581d1744014ece535c920"}
