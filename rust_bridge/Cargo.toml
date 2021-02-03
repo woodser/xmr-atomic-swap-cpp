@@ -12,4 +12,4 @@ path = "src/atomic_swap_rust_bridge.rs"
 
 [dependencies]
 rand = "0.7"
-cross-curve-dleq = { git = "https://github.com/woodser/cross-curve-dleq", rev = "eddcdea1d1f16fa33ef581d1744014ece535c920"}
+cross-curve-dleq = { git = "https://github.com/woodser/cross-curve-dleq", rev = "eddcdea1d1f16fa33ef581d1744014ece535c920", features = ["serde"] }

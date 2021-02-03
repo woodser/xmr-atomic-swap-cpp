@@ -51,6 +51,7 @@ dependencies = [
  "hex-literal",
  "lazy_static",
  "rand",
+ "serde",
  "sha2",
  "thiserror",
 ]
@@ -70,6 +71,7 @@ dependencies = [
  "byteorder",
  "digest 0.8.1",
  "rand_core",
+ "serde",
  "subtle",
  "zeroize",
 ]
@@ -98,6 +100,7 @@ version = "0.3.2-alpha.0"
 source = "git+https://github.com/LLFourn/secp256kfun?rev=cdfbc766045ea678a41780919d6228dd5acee3be#cdfbc766045ea678a41780919d6228dd5acee3be"
 dependencies = [
  "secp256kfun",
+ "serde",
 ]
 
 [[package]]
@@ -273,6 +276,7 @@ dependencies = [
  "rand_core",
  "secp256k1",
  "secp256kfun_parity_backend",
+ "serde",
  "subtle",
 ]
 
@@ -283,6 +287,26 @@ source = "git+https://github.com/LLFourn/secp256kfun?rev=cdfbc766045ea678a417809
 dependencies = [
  "crunchy",
  "subtle",
+]
+
+[[package]]
+name = "serde"
+version = "1.0.123"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "92d5161132722baa40d802cc70b15262b98258453e85e5d1d365c757c73869ae"
+dependencies = [
+ "serde_derive",
+]
+
+[[package]]
+name = "serde_derive"
+version = "1.0.123"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9391c295d64fc0abb2c556bad848f33cb8296276b1ad2677d1ae1ace4f258f31"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
