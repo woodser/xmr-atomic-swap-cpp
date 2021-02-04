@@ -24,6 +24,10 @@ pub extern "C" fn greetings()
   println!("Bitcoin dleq scalar 's_a' as JSON: {}", s_a_json_str);
   let v_a_json_str = serde_json::to_string(&v_a).expect("failed to serialize monero private view key");
   println!("Monero private view key 'v_a' as JSON: {}", v_a_json_str);
+  
+  // deserialize json to keys
+  let s_a_json: cross_curve_dleq::Scalar = serde_json::from_str(&s_a_json_str).unwrap();
+  println!("s_a re-initialized from json: {:?}", s_a_json);
 }
 
 #[no_mangle]
