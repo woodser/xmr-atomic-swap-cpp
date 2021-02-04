@@ -3,12 +3,26 @@ pub extern "C" fn greetings()
 {
   println!("Hello from Rust library file!");
   
+  // random number generator for key generation
+  let rng = &mut rand::rngs::OsRng;
+  
   // generate keys
   println!("Generating keys");
-  let rng = &mut rand::rngs::OsRng;
-  let a = swap::bitcoin::SecretKey::new_random(rng);
-  let s_a = cross_curve_dleq::Scalar::random(rng);
-  let v_a = swap::monero::PrivateViewKey::new_random(rng);
+  let a = swap::bitcoin::SecretKey::new_random(rng);        // Alice's bitcoin private key
+  let A = a.public();                                       // Alice's bitcoin public address?
+  let s_a = cross_curve_dleq::Scalar::random(rng);          // Alice's monero private key
+  let v_a = swap::monero::PrivateViewKey::new_random(rng);  // Alice's monero private view key
+  let S_a_monero = swap::monero::PublicKey::from_private_key(&swap::monero::PrivateKey {  // ??? Alice's monero public key
+    scalar: s_a.into_ed25519(),
+  });
+  let S_a_bitcoin: swap::bitcoin::PublicKey = s_a.into_secp256k1().into(); // ??? Alice's bitcoin public key
+  let dleq_proof_s_a = cross_curve_dleq::Proof::new(rng, &s_a); // dleq proof for s_a
+  
+  //let bitcoin_wallet = Arc<swap::bitcoin::Wallet>;
+  //let a_redeem_address: swap::bitcoin::Address = bitcoin_wallet.new_address().await?;
+  //let a_punish_address = a_redeem_address.close();
+  
+  
   
   // print keys
   //let a_str = format!("{:?}", a);

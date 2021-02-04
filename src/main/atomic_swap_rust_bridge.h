@@ -1,5 +1,5 @@
 /**
- * Bridges C++ to Rust for atomic swaps.
+ * Bridges C++ to Rust for atomic swaps with Monero.
  */
 #ifndef ATOMIC_SWAP_RUST_BRIDGE
 #define ATOMIC_SWAP_RUST_BRIDGE
