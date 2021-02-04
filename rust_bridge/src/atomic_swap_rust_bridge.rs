@@ -11,13 +11,19 @@ pub extern "C" fn greetings()
   let v_a = swap::monero::PrivateViewKey::new_random(rng);
   
   // print keys
-  println!("Bitcoin private key 'a': {:?}", a);
-  let a_str = format!("{:?}", a);
-  println!("Bitcoin private key 'a' as string: {}", a_str);
+  //let a_str = format!("{:?}", a);
+  //println!("Bitcoin private key 'a' as string: {}", a_str);
+  println!("Alice Bitcoin secret key 'a': {:?}", a);
+  println!("Alice Bitcoin dleq scalar 's_a': {:?}", s_a);
+  println!("Alice Monero private view key 'v_a': {:?}", v_a);
   
   // serialize keys to json
   let a_json_str = serde_json::to_string(&a).expect("failed to serialize bitcoin secret key a");
   println!("Bitcoin private key 'a' as JSON: {}", a_json_str);
+  let s_a_json_str = serde_json::to_string(&s_a).expect("failed to serialize bitcoin dleq scalar");
+  println!("Bitcoin dleq scalar 's_a' as JSON: {}", s_a_json_str);
+  let v_a_json_str = serde_json::to_string(&v_a).expect("failed to serialize monero private view key");
+  println!("Monero private view key 'v_a' as JSON: {}", v_a_json_str);
 }
 
 #[no_mangle]
